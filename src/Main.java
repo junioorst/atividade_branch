@@ -1,5 +1,5 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
         Revista r1 = new Revista(101, "Java Programming", "12/05", "Ana Souza", 2023, 1, "Casa do Código", "Tecnologia");
@@ -13,5 +13,16 @@ public class Main {
         lista.adicionaRevista(r3);
 
         lista.mostrarRevistas();
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nDigite o assunto da revista: ");
+        String assunto = input.nextLine();
+
+        Revista revista = lista.consultaRevistaPorAssunto(assunto);
+        if (revista != null) {
+            System.out.println("A revista com o assunto [" + assunto + "] foi encontrada na lista e seu título é [" + revista.getNome() + "]");
+        } else {
+            System.out.println("Não foi possível localizar uma revista com esse assunto!");
+        }
     }
 }

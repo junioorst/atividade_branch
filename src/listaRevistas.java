@@ -36,6 +36,7 @@ public class listaRevistas {
     }
 
     public void mostrarRevistas () {
+        System.out.println("REVISTAS CADASTRADAS:");
         for (int i = 0; i < listaRevistas.size(); i++) {
             Revista aux = listaRevistas.get(i);
             System.out.println(aux.getNome() + " - " + aux.getAutor() + " - " + aux.getAnoPublicacao());
