@@ -1,4 +1,4 @@
-public class Revista {
+public class Revistas {
     private int id;
     private String nome;
     private String dataAquisicao;
@@ -8,7 +8,7 @@ public class Revista {
     private String editora;
     private String assunto;
 
-    public Revista(int id, String nome, String dataAquisicao, String autor, int anoPublicacao, int volume, String editora, String assunto) {
+    public Revistas(int id, String nome, String dataAquisicao, String autor, int anoPublicacao, int volume, String editora, String assunto) {
         this.id = id;
         this.nome = nome;
         this.dataAquisicao = dataAquisicao;
