@@ -1,28 +1,27 @@
-import java.util.*;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Revista r1 = new Revista(101, "Java Programming", "12/05", "Ana Souza", 2023, 1, "Casa do Código", "Tecnologia");
-        Revista r2 = new Revista(202, "Ciência da Computação", "15/06", "Carlos Pereira", 2022, 2, "Editora Acadêmica", "Ciência");
-        Revista r3 = new Revista(303, "Mundo Digital", "10/08", "Beatriz Lima", 2024, 4, "TechEdit", "Inovação");
 
-        listaRevistas lista = new listaRevistas();
+        SistemaCatalogo meuCatalogo = new SistemaCatalogo();
 
-        lista.adicionaRevista(r1);
-        lista.adicionaRevista(r2);
-        lista.adicionaRevista(r3);
+        meuCatalogo.addItem(new Livro("Senhor dos Anéis", Arrays.asList("J.R.R.", "Tolkien"),
+                1925, "Harper Colins"));
 
-        lista.mostrarRevistas();
+        meuCatalogo.addItem(new Revistas("Forbes", "Avon", "Negócios",
+                "Revista dedicada a homens que se acham fodas que querem aparecer" +
+                        "para outros homens que se acham fodas"));
 
-        Scanner input = new Scanner(System.in);
-        System.out.println("\nDigite o assunto da revista: ");
-        String assunto = input.nextLine();
+        meuCatalogo.addItem(new CD("Gauchescas", "Gauchescas", Arrays.asList("Fundo da grota", "Céu azul",
+        "Hino do Colorado")));
 
-        Revista revista = lista.consultaRevistaPorAssunto(assunto);
-        if (revista != null) {
-            System.out.println("A revista com o assunto [" + assunto + "] foi encontrada na lista e seu título é [" + revista.getNome() + "]");
-        } else {
-            System.out.println("Não foi possível localizar uma revista com esse assunto!");
-        }
+        meuCatalogo.addItem(new Livro("Gente Pobre", Arrays.asList("Dostoievski"), 1848, "Editora 34"));
+
+//        meuCatalogo.imprimir("livro");
+//        meuCatalogo.imprimir("cd");
+
+        //meuCatalogo.pesquisar("Livro", "1925");
+
+        meuCatalogo.consulta("livro", "Senhor dos Anéis");
     }
 }

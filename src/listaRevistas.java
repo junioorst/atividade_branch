@@ -42,4 +42,6 @@ public class listaRevistas {
             System.out.println(aux.getNome() + " - " + aux.getAutor() + " - " + aux.getAnoPublicacao());
         }
     }
+
+
 }
